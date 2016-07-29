@@ -18,7 +18,7 @@ RUN set -x \
 
 # COPY latest cf.deb /
 ADD https://cli.run.pivotal.io/stable?release=debian64&source=github-rel /cf.deb
-RUN dpkg -i /cf.deb && cf install-plugin -f https://static-ice.ng.bluemix.net/ibm-containers-linux_x64 && cf add-plugin-repo bluemix http://plugins.ng.bluemix.net && cf install-plugin active-deploy -r bluemix
+RUN dpkg -i /cf.deb && cf install-plugin -f https://static-ice.ng.bluemix.net/ibm-containers-linux_x64 && cf add-plugin-repo bluemix http://plugins.ng.bluemix.net && cf install-plugin active-deploy -r bluemix -f
 
 
 ENTRYPOINT tail -f /dev/null
